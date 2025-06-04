@@ -1,0 +1,748 @@
+#$$$$$$$$$$$$$$$$$$ Binary search trees $$$$$$$$$$$$$$$$$$$$$$$$$$$$#
+
+class Node:
+    def __init__(self,data):
+        self.left=None
+        self.right=None
+        self.data=data
+class bst:  #in normal trees we use only class node but when dealing with binary search treees we must create a class for bst for sure
+#and to create a tree we create the calss with bst
+    def __init__(self):
+        self.root=None
+    def insert(self,data,root):
+    # if root==empty:
+         #starting point of a tree
+        if root is None:
+            #create a node
+            return Node(data)
+    #if data<root  then left recursion(rcc) call
+        if data<root.data:
+            root.left=self.insert(data,root.left)#self is optional 
+    #if data>root then right recursion(rcc) call
+        elif data>root.data:
+            root.right=self.insert(data,root.right)
+        return root
+    def inorder_traversal(self,root):
+        if root:
+            self.inorder_traversal(root.left)
+            print(root.data,end="  ")
+            self.inorder_traversal(root.right)
+bst_tree=bst()
+root=None
+root=bst_tree.insert(20, root)
+root=bst_tree.insert(10, root)
+root=bst_tree.insert(900, root)
+bst_tree.inorder_traversal(root)
+print("\n")
+
+
+o/p:
+10  20  900  
+
+
+#-----------------------------
+
+#$$$$$$$$$$$$$$$$$$ Binary search trees $$$$$$$$$$$$$$$$$$$$$$$$$$$$#
+
+class Node:
+    def __init__(self,data):
+        self.left=None
+        self.right=None
+        self.data=data
+class bst:  #in normal trees we use only class node but when dealing with binary search treees we must create a class for bst for sure
+#and to create a tree we create the calss with bst
+    def __init__(self):
+        self.root=None
+    def insert(self,data,root):
+    # if root==empty:
+         #starting point of a tree
+        if root is None:
+            #create a node
+            return Node(data)
+    #if data<root  then left recursion(rcc) call
+        if data<root.data:
+            root.left=self.insert(data,root.left)#self is optional 
+    #if data>root then right recursion(rcc) call
+        elif data>root.data:
+            root.right=self.insert(data,root.right)
+        return root
+    def inorder_traversal(self,root):
+        if root:
+            self.inorder_traversal(root.left)
+            print(root.data,end="  ")
+            self.inorder_traversal(root.right)
+    
+bst_tree=bst()
+root=None
+root=bst_tree.insert(20, root)
+root=bst_tree.insert(10, root)
+root=bst_tree.insert(900, root)
+print("Inorder Traversal: ")
+bst_tree.inorder_traversal(root)
+print("\n")
+
+
+o/p:
+Inorder Traversal: 
+10  20  900  
+
+
+#---------------------------------------------
+#$$$$$$$$$$$$$$$$$$ Binary search trees $$$$$$$$$$$$$$$$$$$$$$$$$$$$#
+
+class Node:
+    def __init__(self,data):
+        self.left=None
+        self.right=None
+        self.data=data
+class bst:  #in normal trees we use only class node but when dealing with binary search treees we must create a class for bst for sure
+#and to create a tree we create the calss with bst
+    def __init__(self):
+        self.root=None
+    def insert(self,data,root):
+    # if root==empty:
+         #starting point of a tree
+        if root is None:
+            #create a node
+            return Node(data)
+    #if data<root  then left recursion(rcc) call
+        if data<root.data:
+            root.left=self.insert(data,root.left)#self is optional 
+    #if data>root then right recursion(rcc) call
+        elif data>root.data:
+            root.right=self.insert(data,root.right)
+        return root
+    def inorder_traversal(self,root):
+        if root:
+            self.inorder_traversal(root.left)
+            print(root.data,end="  ")
+            self.inorder_traversal(root.right)
+    def preorder_traversal(self,root):
+        if root:
+            print(root.data,end=" ")
+            self.preorder_traversal(root.left)
+            self.preorder_traversal(root.right)
+    def postorder_traversal(self,root):
+        if root:
+            self.postorder_traversal(root.left)
+            self.postorder_traversal(root.right)
+            print(root.data,end=" " )
+
+    
+bst_tree=bst()
+root=None
+root=bst_tree.insert(20, root)
+root=bst_tree.insert(10, root)
+root=bst_tree.insert(900, root)
+print("Inorder Traversal: ")
+bst_tree.inorder_traversal(root)
+print("\n")
+print("preorder Traversal: ")
+bst_tree.preorder_traversal(root)
+print("\n")
+print("postorder Traversal: ")
+bst_tree.postorder_traversal(root)
+print("\n")
+
+
+o/p:
+Inorder Traversal: 
+10  20  900  
+
+preorder Traversal: 
+20 10 900 
+
+postorder Traversal: 
+10 900 20
+
+
+#================================================
+
+#search in bst
+
+
+#$$$$$$$$$$$$$$$$$$ Binary search trees $$$$$$$$$$$$$$$$$$$$$$$$$$$$#
+
+class Node:
+    def __init__(self,data):
+        self.left=None
+        self.right=None
+        self.data=data
+class bst:  #in normal trees we use only class node but when dealing with binary search treees we must create a class for bst for sure
+#and to create a tree we create the calss with bst
+    def __init__(self):
+        self.root=None
+    def insert(self,data,root):
+    # if root==empty:
+         #starting point of a tree
+        if root is None:
+            #create a node
+            return Node(data)
+    #if data<root  then left recursion(rcc) call
+        if data<root.data:
+            root.left=self.insert(data,root.left)#self is optional 
+    #if data>root then right recursion(rcc) call
+        elif data>root.data:
+            root.right=self.insert(data,root.right)
+        return root
+    def inorder_traversal(self,root):
+        if root:
+            self.inorder_traversal(root.left)
+            print(root.data,end="  ")
+            self.inorder_traversal(root.right)
+    def preorder_traversal(self,root):
+        if root:
+            print(root.data,end=" ")
+            self.preorder_traversal(root.left)
+            self.preorder_traversal(root.right)
+    def postorder_traversal(self,root):
+        if root:
+            self.postorder_traversal(root.left)
+            self.postorder_traversal(root.right)
+            print(root.data,end=" " )
+    def search_in_bst(self,root,key):
+        if(root.data==key):#Base case when to stop the recursive call
+            return True
+        if(root is None):
+            return False
+        if(key<root.data):
+            return self.search_in_bst(root.left,key)
+        elif(key>root.data):
+            return self.search_in_bst(root.right,key)
+        else:
+            return True
+            
+        
+        
+        
+    
+bst_tree=bst()
+root=None
+root=bst_tree.insert(20, root)#in bst if we want to insert values no need to give root left.data like this stuff just give root=bst_tree.inesrt( value,root)
+root=bst_tree.insert(10, root)
+root=bst_tree.insert(900, root)
+root=bst_tree.insert(5, root)
+root=bst_tree.insert(45, root)
+print("Inorder Traversal: ")
+bst_tree.inorder_traversal(root)
+print("\n")
+print("preorder Traversal: ")
+bst_tree.preorder_traversal(root)
+print("\n")
+print("postorder Traversal: ")
+bst_tree.postorder_traversal(root)
+print("\n")
+print(bst_tree.search_in_bst(root,10))
+
+
+
+o/p:
+Inorder Traversal: 
+5  10  20  45  900  
+
+preorder Traversal: 
+20 10 5 900 45 
+
+postorder Traversal: 
+5 10 45 900 20 
+
+True         #true why because 10 is present in the tree
+
+#=================================================================
+
+
+#$$$$$$$$$$$$$$$$$$ Binary search trees $$$$$$$$$$$$$$$$$$$$$$$$$$$$#
+
+class Node:
+    def __init__(self,data):
+        self.left=None
+        self.right=None
+        self.data=data
+class bst:  #in normal trees we use only class node but when dealing with binary search treees we must create a class for bst for sure
+#and to create a tree we create the calss with bst
+    def __init__(self):
+        self.root=None
+    def insert(self,data,root):
+    # if root==empty:
+         #starting point of a tree
+        if root is None:
+            #create a node
+            return Node(data)
+    #if data<root  then left recursion(rcc) call
+        if data<root.data:
+            root.left=self.insert(data,root.left)#self is optional 
+    #if data>root then right recursion(rcc) call
+        elif data>root.data:
+            root.right=self.insert(data,root.right)
+        return root
+    def inorder_traversal(self,root):
+        if root:
+            self.inorder_traversal(root.left)
+            print(root.data,end="  ")
+            self.inorder_traversal(root.right)
+    def preorder_traversal(self,root):
+        if root:
+            print(root.data,end=" ")
+            self.preorder_traversal(root.left)
+            self.preorder_traversal(root.right)
+    def postorder_traversal(self,root):
+        if root:
+            self.postorder_traversal(root.left)
+            self.postorder_traversal(root.right)
+            print(root.data,end=" " )
+    def search_in_bst(self,root,key):
+        if(root is None):
+            return False
+        if(root.data==key):#Base case when to stop the recursive call
+            return True
+        
+        if(key<root.data):
+            return self.search_in_bst(root.left,key)
+        elif(key>root.data):
+            return self.search_in_bst(root.right,key)
+        else:
+            return True
+    def height(self,root):
+        if(root is None):
+            return 0
+        else:
+            return max(self.height(root.left),self.height(root.right))+1
+            
+        
+        
+        
+    
+bst_tree=bst()
+root=None
+root=bst_tree.insert(20, root)#in bst if we want to insert values no need to give root left.data like this stuff just give root=bst_tree.inesrt( value,root)
+root=bst_tree.insert(10, root)
+root=bst_tree.insert(900, root)
+root=bst_tree.insert(5, root)
+root=bst_tree.insert(45, root)
+print("Inorder Traversal: ")
+bst_tree.inorder_traversal(root)
+print("\n")
+print("preorder Traversal: ")
+bst_tree.preorder_traversal(root)
+print("\n")
+print("postorder Traversal: ")
+bst_tree.postorder_traversal(root)
+print("\n")
+print(bst_tree.search_in_bst(root,10))
+print(bst_tree.search_in_bst(root,5))
+print(bst_tree.search_in_bst(root,900))
+print("\n")
+print("Height of a Binary Search tree is: ")
+print(bst_tree.height(root))
+
+
+
+
+
+
+
+
+
+
+o/p:
+
+
+Inorder Traversal: 
+5  10  20  45  900  
+
+preorder Traversal: 
+20 10 5 900 45 
+
+postorder Traversal: 
+5 10 45 900 20 
+
+True
+True
+True
+
+
+Height of a Binary Search tree is: 
+3
+
+#0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+you can write like this also height function
+
+#$$$$$$$$$$$$$$$$$$ Binary search trees $$$$$$$$$$$$$$$$$$$$$$$$$$$$#
+
+class Node:
+    def __init__(self,data):
+        self.left=None
+        self.right=None
+        self.data=data
+class bst:  #in normal trees we use only class node but when dealing with binary search treees we must create a class for bst for sure
+#and to create a tree we create the calss with bst
+    def __init__(self):
+        self.root=None
+    def insert(self,data,root):
+    # if root==empty:
+         #starting point of a tree
+        if root is None:
+            #create a node
+            return Node(data)
+    #if data<root  then left recursion(rcc) call
+        if data<root.data:
+            root.left=self.insert(data,root.left)#self is optional 
+    #if data>root then right recursion(rcc) call
+        elif data>root.data:
+            root.right=self.insert(data,root.right)
+        return root
+    def inorder_traversal(self,root):
+        if root:
+            self.inorder_traversal(root.left)
+            print(root.data,end="  ")
+            self.inorder_traversal(root.right)
+    def preorder_traversal(self,root):
+        if root:
+            print(root.data,end=" ")
+            self.preorder_traversal(root.left)
+            self.preorder_traversal(root.right)
+    def postorder_traversal(self,root):
+        if root:
+            self.postorder_traversal(root.left)
+            self.postorder_traversal(root.right)
+            print(root.data,end=" " )
+    def search_in_bst(self,root,key):
+        if(root is None):
+            return False
+        if(root.data==key):#Base case when to stop the recursive call
+            return True
+        
+        if(key<root.data):
+            return self.search_in_bst(root.left,key)
+        elif(key>root.data):
+            return self.search_in_bst(root.right,key)
+        else:
+            return True
+    def height(self,root):
+        if(root is None):
+            return 0
+        else:
+            return 1+max(self.height(root.left),self.height(root.right))
+            
+        
+        #difference is in before program i like +1 at the end and in this i write it in the front side
+             thats the difference
+        
+    
+bst_tree=bst()
+root=None
+root=bst_tree.insert(20, root)#in bst if we want to insert values no need to give root left.data like this stuff just give root=bst_tree.inesrt( value,root)
+root=bst_tree.insert(10, root)
+root=bst_tree.insert(900, root)
+root=bst_tree.insert(5, root)
+root=bst_tree.insert(45, root)
+print("Inorder Traversal: ")
+bst_tree.inorder_traversal(root)
+print("\n")
+print("preorder Traversal: ")
+bst_tree.preorder_traversal(root)
+print("\n")
+print("postorder Traversal: ")
+bst_tree.postorder_traversal(root)
+print("\n")
+print(bst_tree.search_in_bst(root,10))
+print(bst_tree.search_in_bst(root,5))
+print(bst_tree.search_in_bst(root,900))
+print("\n")
+print("Height of a Binary Search tree is: ")
+print(bst_tree.height(root))
+
+
+
+
+o/p:
+Inorder Traversal: 
+5  10  20  45  900  
+
+preorder Traversal: 
+20 10 5 900 45 
+
+postorder Traversal: 
+5 10 45 900 20 
+
+True
+True
+True
+
+
+Height of a Binary Search tree is: 
+3
+
+#9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+
+sum of nodes
+
+
+#$$$$$$$$$$$$$$$$$$ Binary search trees $$$$$$$$$$$$$$$$$$$$$$$$$$$$#
+
+class Node:
+    def __init__(self,data):
+        self.left=None
+        self.right=None
+        self.data=data
+class bst:  #in normal trees we use only class node but when dealing with binary search treees we must create a class for bst for sure
+#and to create a tree we create the calss with bst
+    def __init__(self):
+        self.root=None
+    def insert(self,data,root):
+    # if root==empty:
+         #starting point of a tree
+        if root is None:
+            #create a node
+            return Node(data)
+    #if data<root  then left recursion(rcc) call
+        if data<root.data:
+            root.left=self.insert(data,root.left)#self is optional 
+    #if data>root then right recursion(rcc) call
+        elif data>root.data:
+            root.right=self.insert(data,root.right)
+        return root
+    def inorder_traversal(self,root):
+        if root:
+            self.inorder_traversal(root.left)
+            print(root.data,end="  ")
+            self.inorder_traversal(root.right)
+    def preorder_traversal(self,root):
+        if root:
+            print(root.data,end=" ")
+            self.preorder_traversal(root.left)
+            self.preorder_traversal(root.right)
+    def postorder_traversal(self,root):
+        if root:
+            self.postorder_traversal(root.left)
+            self.postorder_traversal(root.right)
+            print(root.data,end=" " )
+    def search_in_bst(self,root,key):
+        if(root is None):
+            return False
+        if(root.data==key):#Base case when to stop the recursive call
+            return True
+        
+        if(key<root.data):
+            return self.search_in_bst(root.left,key)
+        elif(key>root.data):
+            return self.search_in_bst(root.right,key)
+        else:
+            return True
+    def height(self,root):
+        if(root is None):
+            return 0
+        else:
+            return 1+max(self.height(root.left),self.height(root.right))
+    def sum_of_nodes(self,root):
+        if root is None:
+            return 0
+        return root.data+self.sum_of_nodes(root.left)+self.sum_of_nodes(root.right)
+            
+        
+        
+        
+    
+bst_tree=bst()
+root=None
+root=bst_tree.insert(20, root)#in bst if we want to insert values no need to give root left.data like this stuff just give root=bst_tree.inesrt( value,root)
+root=bst_tree.insert(10, root)
+root=bst_tree.insert(900, root)
+root=bst_tree.insert(5, root)
+root=bst_tree.insert(45, root)
+print("Inorder Traversal: ")
+bst_tree.inorder_traversal(root)
+print("\n")
+print("preorder Traversal: ")
+bst_tree.preorder_traversal(root)
+print("\n")
+print("postorder Traversal: ")
+bst_tree.postorder_traversal(root)
+print("\n")
+print(bst_tree.search_in_bst(root,10))
+print(bst_tree.search_in_bst(root,5))
+print(bst_tree.search_in_bst(root,900))
+print("\n")
+print("Height of a Binary Search tree is: ")
+print(bst_tree.height(root))
+print("\n")
+print("Sum of nodes in the binary search tree: ")
+print(bst_tree.sum_of_nodes(root))
+
+
+
+
+
+
+
+
+
+
+o/p:
+Inorder Traversal: 
+5  10  20  45  900  
+
+preorder Traversal: 
+20 10 5 900 45 
+
+postorder Traversal: 
+5 10 45 900 20 
+
+True
+True
+True
+
+
+Height of a Binary Search tree is: 
+3
+
+
+Sum of nodes in the binary search tree: 
+980
+
+
+#10000000000000000000000000011111111111111111111111111111111111111000000000000000000000000000
+
+
+count of nodes
+
+
+
+
+#$$$$$$$$$$$$$$$$$$ Binary search trees $$$$$$$$$$$$$$$$$$$$$$$$$$$$#
+
+class Node:
+    def __init__(self,data):
+        self.left=None
+        self.right=None
+        self.data=data
+class bst:  #in normal trees we use only class node but when dealing with binary search treees we must create a class for bst for sure
+#and to create a tree we create the calss with bst
+    def __init__(self):
+        self.root=None
+    def insert(self,data,root):
+    # if root==empty:
+         #starting point of a tree
+        if root is None:
+            #create a node
+            return Node(data)
+    #if data<root  then left recursion(rcc) call
+        if data<root.data:
+            root.left=self.insert(data,root.left)#self is optional 
+    #if data>root then right recursion(rcc) call
+        elif data>root.data:
+            root.right=self.insert(data,root.right)
+        return root
+    def inorder_traversal(self,root):
+        if root:
+            self.inorder_traversal(root.left)
+            print(root.data,end="  ")
+            self.inorder_traversal(root.right)
+    def preorder_traversal(self,root):
+        if root:
+            print(root.data,end=" ")
+            self.preorder_traversal(root.left)
+            self.preorder_traversal(root.right)
+    def postorder_traversal(self,root):
+        if root:
+            self.postorder_traversal(root.left)
+            self.postorder_traversal(root.right)
+            print(root.data,end=" " )
+    def search_in_bst(self,root,key):
+        if(root is None):
+            return False
+        if(root.data==key):#Base case when to stop the recursive call
+            return True
+        
+        if(key<root.data):
+            return self.search_in_bst(root.left,key)
+        elif(key>root.data):
+            return self.search_in_bst(root.right,key)
+        else:
+            return True
+    def height(self,root):
+        if(root is None):
+            return 0
+        else:
+            return 1+max(self.height(root.left),self.height(root.right))
+    def sum_of_nodes(self,root):
+        if root is None:
+            return 0
+        return root.data+self.sum_of_nodes(root.left)+self.sum_of_nodes(root.right)
+            
+    def count_of_nodes(self, root):
+        if root is None:
+           return 0
+           return 1 +(self.count_of_nodes(root.left) + self.count_of_nodes(root.right) )
+        
+        
+    
+bst_tree=bst()
+root=None
+root=bst_tree.insert(20, root)#in bst if we want to insert values no need to give root left.data like this stuff just give root=bst_tree.inesrt( value,root)
+root=bst_tree.insert(10, root)
+root=bst_tree.insert(900, root)
+root=bst_tree.insert(5, root)
+root=bst_tree.insert(45, root)
+print("Inorder Traversal: ")
+bst_tree.inorder_traversal(root)
+print("\n")
+print("preorder Traversal: ")
+bst_tree.preorder_traversal(root)
+print("\n")
+print("postorder Traversal: ")
+bst_tree.postorder_traversal(root)
+print("\n")
+print(bst_tree.search_in_bst(root,10))
+print(bst_tree.search_in_bst(root,5))
+print(bst_tree.search_in_bst(root,900))
+print("\n")
+print("Height of a Binary Search tree is: ")
+print(bst_tree.height(root))
+print("\n")
+print("Sum of nodes in the binary search tree: ")
+print(bst_tree.sum_of_nodes(root))
+print("\n")
+print("Number of nodes in binary search tree : ")
+print(bst_tree.count_of_nodes(root))
+
+
+
+
+
+
+
+
+
+o/p:
+Inorder Traversal: 
+5  10  20  45  900  
+
+preorder Traversal: 
+20 10 5 900 45 
+
+postorder Traversal: 
+5 10 45 900 20 
+
+True
+True
+True
+
+
+Height of a Binary Search tree is: 
+3
+
+
+Sum of nodes in the binary search tree: 
+980
+
+
+Number of nodes in binary search tree : 
+None
+ #Noe is not the answer or the cunt of nodes correct taht once after
+
+
+
+
+

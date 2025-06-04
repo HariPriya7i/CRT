@@ -1,0 +1,456 @@
+
+
+
+#=====================Stack push operation=====================#
+
+
+top=-1#it is not working here if we did not put this in the program then also the same output will come
+stack=[]
+def push():
+    if(top==len(stack)-1):
+        return "Stack is full"
+    else:
+        return "stack is not full"
+        top=top+1
+
+stack.append(10)
+stack.append(20)
+stack.append(11)
+print(stack)
+print("\n")
+
+
+o/p:
+[10, 20, 11]
+-------------------------------------------------------------------------------------------------------
+
+# @@@@@@@@@@@@@@@@@@@@@ 2 method for push@@@@@@@@@@@@@@@@@@@@@@@@@@@#
+def push(value):
+    top=-1
+    if(top==4):
+        return "stack is full"
+    else:
+        top=top+1
+        return stack.append(value)
+stack=[10]  #means initially the stack containg the element 10
+push(20)
+push(30)
+push(40)
+push(50)
+print(stack)
+print("\n")
+
+o/p:
+[10, 20, 30, 40, 50]
+
+--------------------------------------------------------------------------------------
+
+
+#$$$$$$$$$$$$$$$$$$$$$$$$$$pop $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$#
+stack=[10,20,30,40,50]
+top!=1
+def pop():
+    if(top!=-1):
+        return "The stack is full"
+    else:
+        return "The stack is empty"
+stack.pop()
+print(stack)
+print("\n")
+
+o/p:
+[10, 20, 30, 40]
+
+
+----------------------------------------------------------------------------------------------------------
+
+#$$$$$$$$$$$$$$$$$$$$$$$$$$pop $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$#
+stack=[10,20,30,40,50]
+top!=1
+def pop():
+    if(top!=-1):
+        return "The stack is full"
+    else:
+        return "The stack is empty"
+stack.pop()
+stack.pop()
+stack.pop()
+print(stack)
+
+
+o/p:
+[10, 20]
+----------------------------------------------------------------------------------------------------------------
+#   push and pop #  correct his code it is not correct litttle bit dout
+def push(value):
+    top=-1
+    if(top==4):
+        return "stack is full"
+    else:
+        top=top+1
+        return stack.append(value)
+def pop():
+    top=5
+    if(top!=-1):
+        return stack.pop()
+    else:
+        top=top-1
+        return "The stack is empty"
+stack=[]
+push(60)
+push(70)
+print(stack)
+pop()
+print(stack)
+
+
+
+o/p:
+[60, 70]
+[60]
+
+
+
+
+
+
+------------------------------------------------------------------------
+
+
+
+#   push and pop #  correct his code it is not correct litttle bit dout
+def push(value):
+    top=-1
+    if(top==4):
+        return "stack is full"
+    else:
+        top=top+1
+        return stack.append(value)
+def pop():
+    top=5
+    if(top!=-1):
+        return stack.pop()
+    else:
+        top=top-1
+        return "The stack is empty"
+stack=[]
+push(60)
+push(70)
+push(80)
+push(90)
+pop()
+print(stack)
+
+
+
+o/p:
+[60, 70, 80]
+
+--------------------------------------------------
+
+
+
+#   push and pop #
+def push(value):
+    top=-1
+    if(top==4):
+        return "stack is full"
+    else:
+        top=top+1
+        return stack.append(value)
+def pop():
+    top=5
+    if(top!=-1):
+        return stack.pop()
+    else:
+        top=top-1
+        return "The stack is empty"
+stack=[]
+top=-1 #####
+size=5
+stack=[None]*size
+push(60)
+push(70)
+push(80)
+push(90)
+pop()
+print(stack)
+
+o/p:
+[None, None, None, None, None, 60, 70, 80]
+
+
+
+
+
+-------------------------------------------------------
+#   push and pop #  
+stack=[]
+top=-1#this is local variable
+def push(value):
+    global top#making the top from local to global
+    top=-1
+    if(top==4):
+        return "stack is full"
+    else:
+        top=top+1
+        return stack.append(value)
+def pop():
+    top=5
+    if(top!=-1):
+        return stack.pop()
+    else:
+        top=top-1
+        return "The stack is empty"
+size=5
+push(60)
+push(70)
+push(80)
+push(90)
+pop()
+print(stack)
+
+
+o/p:
+[60,70,80]
+------------------------------------------------
+#^^^^^^^^^^^^^^^^^^^^^^^ peek() ^^^^^^^^^^^^^^^^^^^^^^
+#means printing top element/value
+#   push and pop #  
+stack=[]
+top=-1#this is local variable
+def push(value):
+    global top#making the top from local to global
+    top=-1
+    if(top==4):
+        return "stack is full"
+    else:
+        top=top+1
+        return stack.append(value)
+def pop():
+    top=5
+    if(top!=-1):
+        return stack.pop()
+    else:
+        top=top-1
+        return "The stack is empty"
+def peek():
+    if top==-1:
+        return "Stack is empty.No top element"
+    else:
+        return f"The top element is={stack[top]}"
+        
+size=5
+push(60)
+push(70)
+push(80)
+push(90)
+push(100)
+push(110)
+push(120)
+pop()
+print(stack)
+print(peek())
+
+o/p:
+[60, 70, 80, 90, 100, 110]
+The top element is=60
+
+
+
+----------------------------------------------------------------------------
+#   push and pop peek  #  
+stack=[]
+top=-1#this is local variable
+def push(value):
+    global top#making the top from local to global
+    top=-1
+    if(top==4):
+        return "stack is full"
+    else:
+        top=top+1
+        return stack.append(value)
+def pop():
+    top=5
+    if(top!=-1):
+        return stack.pop()
+    else:
+        top=top-1
+        return "The stack is empty"
+def peek():
+    if top==-1:
+        return "Stack is empty.No top element"
+    else:
+        return f"The top element is={stack[top]}"
+        
+size=5
+push(60)
+push(70)
+push(80)
+push(90)
+push(100)
+push(110)
+push(120)
+pop()
+print(stack)
+print(peek())
+print("\n")
+
+
+o/p:
+[60, 70, 80, 90, 100, 110]
+The top element is=60
+
+------------------------------------------------------------------------------------------------
+
+#****************Top element(peek) push ,pop,display ***************#
+
+stack=[]
+top = -1
+def push(value):
+    global top
+    stack.append(value)
+    top+=1
+def pop():
+    global top
+    if top == -1:
+        print("Stack is empty.Nothing to pop")
+        return
+    else:
+        stack.pop()
+        top-=1
+def peek():  #peek element means the elemnt is pushed at last  that element is known as peek elemnt
+    if top == -1:
+        return "Stack is empty.No Top Elements"
+    else:
+        return f"Top Elements={stack[top]}"
+def display():
+    if(top==-1):
+        print("Empty")
+    else:
+        for i in range(top,-1,-1):
+            print(stack[i])
+push(10)
+push(20)
+push(30)
+push(40)
+push(50)
+push(60)
+
+pop()
+pop()
+print(peek())
+display()
+
+
+
+#The display() is used to display the elments starting with the last push element
+
+
+
+o/p:
+Top Elements=40
+40
+30
+20
+10
+
+
+-----------------------------------------------------------------------------------------------
+#if we want to display the elemts in one row then
+#****************Top element(peek) push ,pop,display ***************#
+
+stack=[]
+top = -1
+def push(value):
+    global top
+    stack.append(value)
+    top+=1
+def pop():
+    global top
+    if top == -1:
+        print("Stack is empty.Nothing to pop")
+        return
+    else:
+        stack.pop()
+        top-=1
+def peek():  #peek element means the elemnt is pushed at last  that element is known as peek elemnt
+    if top == -1:
+        return "Stack is empty.No Top Elements"
+    else:
+        return f"Top Elements={stack[top]}"
+def display():
+    if(top==-1):
+        print("Empty")
+    else:
+        for i in range(top,-1,-1):
+            print(stack[i],end=" ")
+push(10)
+push(20)
+push(30)
+push(40)
+push(50)
+push(60)
+
+pop()
+pop()
+print(peek())
+display()
+
+
+
+o/p:
+Top Elements=40
+40 30 20 10
+
+------------------------------------------------------------------------------------------------------
+
+#stack methods all in one but not all
+
+
+while True: 
+    print("\n---Welcome to the stack methods---") 
+    print("1.Push") 
+    print("2.Pop") 
+    print("3.Print the peek element in the stack") 
+    print("4.Display all the elements in the stack") 
+    print("5.Exit") 
+    choice=int(input("Enter the choice:")) 
+    if choice-1: 
+       value=int(input("Enter the value you want to push:")) 
+       push(value) 
+    elif choice==2: 
+       pop() 
+    elif choice==3: 
+       peek() 
+       print (peek()) 
+    elif choice==4: 
+       display()
+    else:
+       print("Exit")
+
+
+o/p:
+
+---Welcome to the stack methods---
+1.Push
+2.Pop
+3.Print the peek element in the stack
+4.Display all the elements in the stack
+5.Exit
+Enter the choice:1
+Exit
+
+---Welcome to the stack methods---
+1.Push
+2.Pop
+3.Print the peek element in the stack
+4.Display all the elements in the stack
+5.Exit
+Enter the choice:
+
+
+
+
+o/p wrong please make some changes
+        

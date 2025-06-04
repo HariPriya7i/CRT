@@ -1,0 +1,144 @@
+#binary search
+
+def binary_search(arr,target):
+    start=0
+    end=len(arr)-1
+    mid=(start+end)//2
+    while(start<=end):
+        if(arr[mid]==target):
+           return mid
+        elif(target>arr[mid]):
+           start=mid+1
+        else:
+           end=mid-1
+        mid=(start+end)//2
+    return -1#if not found return -1
+arr=[4,5,6,7,8,9,10,11,12]
+target=7
+result=binary_search(arr,target)
+print(result)
+
+
+
+#the program prints the index value of the target
+
+
+
+o/p:
+
+3
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+
+#whwn there are duplicate values
+#how to handle duplicate values
+
+def binary_search(arr,target):
+    start=0
+    end=len(arr)-1
+    result=-1
+    while(start<=end):
+        mid=(start+end)//2
+        if(arr[mid]==target):
+           result=mid
+           end=mid-1
+        elif(target>arr[mid]):
+           start=mid+1
+        else:
+           end=mid-1
+    return result
+arr=[1,1,1,2,2,3,3,3,3,3,3,3,4,4,4,5,5,5]
+target=3
+result=binary_search(arr,target)
+print(result)
+#the program prints the index value of the target
+
+
+
+
+o/p:
+
+5
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+#whwn there are duplicate values
+#how to handle duplicate values
+
+def binary_search(arr,target):
+    start=0
+    end=len(arr)-1
+    result=-1
+    while(start<=end):
+        mid=(start+end)//2
+        if(arr[mid]==target):
+           result=mid
+           end=mid-1
+        elif(target>arr[mid]):
+           start=mid+1
+        else:
+           end=mid-1
+    return result
+arr=[1,1,1,2,2,3,3,3,3,3,3,3,4,4,4,5,5,5]
+target=5
+result=binary_search(arr,target)
+print(result)
+#the program prints the index value of the target
+
+
+o/p:
+
+15   #This is the index of 5  there are 3 indexes for 5 those are 15,16,17 but the output prints the first index only
+      same in the before program also that means when target=3   there also the index of the 3 will be printed
+
+
+**********************************************************************************************
+
+
+###################@@@@@@@@@$$$$$$$$$$$$$$$$$%%%%%%%%%%%%%%%%%%%%%%%^^^^^^^^^^^^^^^^^^^^^^^^^^&&&&&&&&&&&&&&&&**********************(((((((((((((((((((((((Merge sort  )))))))))))))))))))))))
+
+def merge_sort(arr,start=0,end=None):
+    
+    if end is None:
+       end=len(arr)-1
+    if start<end:
+        mid=(start+end)//2
+        merge_sort(arr,start,mid)
+        merge_sort(arr,mid+1,end)
+        merge(arr,start,mid,end)
+def merge(arr,start,mid,end):
+    left=arr[start:mid+1]
+    right=arr[mid+1:end+1]
+    i=j=0
+    k=start
+    while i<len(left) and j<len(right):
+        if left[i]<=right[j]:
+            arr[k]=left[i]
+            i+=1
+        else:
+            arr[k]=right[j]
+            j+=1
+        k+=1
+    while i<len(left):
+        arr[k]=left[i]
+        i+=1
+        k+=1
+    while j<len(right):
+        arr[k]=right[j]
+        j+=1
+        k+=1
+arr=[30,12,4,49,45]
+merge_sort(arr)
+print(arr)
+        
+    
+
+o/p:
+
+[4, 12, 30, 45, 49]
